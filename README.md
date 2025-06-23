@@ -35,34 +35,9 @@ EcoSwap is a modern, user-friendly web platform aimed at making **recycling easi
 ## 📸 **Screenshots**
 
 
-| Homepage (Carousel) | Pickup Form | CO₂ Counter |
-|---------------------|-------------|-------------|
-| ![Homepage](imgs/metal1.jpg) | ![Form](imgs/plastic2.jpg) | ![Impact](imgs/swap.gif) |
-
----
-
-## 📁 **Project Folder Structure**
-ecoswap/
-
-├── index.html
-├── our-app.html
-├── contact.html
-├── rate-card.html
-├── how.html
-├── about.html
-├── FAQ.html
-├── css/
-
-│ └── new-age.min.css
-├── imgs/
-
-│ ├── metal1.jpg
-│ ├── plastic2.jpg
-│ └── swap.gif
-├── vendor/
-
-│ ├── fontawesome-free/
-│ └── simple-line-icons/
+| Homepage |
+|---------------------|
+| ![Homepage](imgs/dashboard.png) |
 
 ---
 
@@ -94,9 +69,9 @@ _AI & Data Science Student_
 
 ---
 
-## 📃 **License**
+## 📃 **Note**
 
-This project is developed as part of the **1M1B Green Internship Initiative** and is open for educational, non-commercial use. For contributions or feedback, feel free to reach out via [LinkedIn](https://in.linkedin.com/in/gulam-shaikh).
+This project is developed as part of the **1M1B Green Internship Initiative** and is made for educational purpose & inspired from expert sources. For contributions or feedback, feel free to reach out via [LinkedIn](https://in.linkedin.com/in/gulam-shaikh).
 
 ---
 
