@@ -43,6 +43,7 @@ EcoSwap is a modern, user-friendly web platform aimed at making **recycling easi
 
 ## 📁 **Project Folder Structure**
 ecoswap/
+
 ├── index.html
 ├── our-app.html
 ├── contact.html
@@ -51,12 +52,15 @@ ecoswap/
 ├── about.html
 ├── FAQ.html
 ├── css/
+
 │ └── new-age.min.css
 ├── imgs/
+
 │ ├── metal1.jpg
 │ ├── plastic2.jpg
 │ └── swap.gif
 ├── vendor/
+
 │ ├── fontawesome-free/
 │ └── simple-line-icons/
 
@@ -99,7 +103,7 @@ This project is developed as part of the **1M1B Green Internship Initiative** an
 ## 🖇️ Quick Links
 
 - 🔗 [Live Project on Netlify](https://ecoswap-world.netlify.app/)
-- 📁 [GitHub Repository (add link once pushed)](https://github.com/gulamshaikh/EcoSwap)
+- 📁 [GitHub Repository](https://github.com/gulamshaikh/EcoSwap)
 
 ---
 
