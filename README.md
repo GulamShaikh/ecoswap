@@ -1,7 +1,7 @@
 
 # 🌍 **EcoSwap – India's Smart Scrap Management Platform** ♻️
 
-**🚀 Live Site:** [https://ecoswap-india.netlify.app]([https://ecoswap-india.netlify.app](https://ecoswap-world.netlify.app/))
+**🚀 Live Site:** [https://ecoswap-world.netlify.app](https://ecoswap-world.netlify.app/)
 
 EcoSwap is a modern, user-friendly web platform aimed at making **recycling easier, accessible, and rewarding** for everyone. Whether you're a household or a business, EcoSwap empowers you to schedule pickups for recyclable materials — while promoting environmental responsibility and awareness.
 
