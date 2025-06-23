@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="css/rate-card.css" rel="stylesheet">
+  <title>EcoSwap – Rate Card</title> <!-- 🔄 CHANGED title from Infinity Scrapers -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <!-- 🔄 Updated background to match EcoSwap theme -->
+  <style type="text/css">
+    body {
+      background: linear-gradient(to right, #d0f0c0, #a8e6cf) !important;
+    }
+  </style>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">EcoSwap</a> <!-- 🔄 CHANGED brand name -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item active"><a class="nav-link" href="rate-card.html">Rate Card</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">Learn More</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="how.html">How It Works?</a>
+            <a class="dropdown-item" href="about.html">About Us</a>
+            <a class="dropdown-item" href="FAQ.html">FAQs</a>
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="our-app.html">Our App</a></li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <ol class="col-12 breadcrumb">
+        <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+        <li class="breadcrumb-item active">Rate Card</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- 🔁 RATE CARD SECTION BELOW - NO FORMAT CHANGES DONE -->
+  <div class="container super-container">
+    <div class="header-content mx-auto text-center row" style="justify-content: center;">
+      <h1 class="mb-5" style="font-size:60px">RATE CARD</h1>
+      <img src="imgs/calculator.svg" class="calculator" />
+    </div>
+    <hr>
+
+    <div class="row" style="padding: 40px;">
+            <div class="col-md-3 mb-4 ">
+                <div class="card text-center">
+                    <div class="card-body custom-card">
+                        <img src="imgs/polyL.jpg" class="card-img-top" height="150px">
+                        <h4 class="card-title">Plastic (Large)</h4>
+                        <p class="card-text text-muted">Rs. 8/pc</p>
+                        <button id="input1" class="btn-sm cbtn btn text-left collapsed" type="button"
+                            data-toggle="collapse" data-target="#i1" aria-expanded="false" aria-controls="i1">
+                            Check
+                        </button>
+                        <div id="i1" class="input-group mb-3 collapse" aria-labelledby="headingOne"
+                            data-parent="#input1">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Qty.</span>
+                                <input id="1" type="number" class="form-control" placeholder="Enter qty">
+                                <span class="input-group-text">pc</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card text-center">
+                    <div class="card-body custom-card">
+                        <img src="imgs/polyS.jpg" class="card-img-top" height="150px">
+                        <h4 class="card-title">Plastic (Small)</h4>
+                        <p class="card-text text-muted">Rs. 3/pc</p>
+                        <button id="input2" class="btn-sm cbtn btn text-left collapsed" type="button"
+                            data-toggle="collapse" data-target="#i2" aria-expanded="false" aria-controls="i2">
+                            Check
+                        </button>
+                        <div id="i2" class="input-group mb-3 collapse" aria-labelledby="headingOne"
+                            data-parent="#input2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Qty.</span>
+                                <input id="2" type="number" class="form-control" placeholder="Enter qty">
+                                <span class="input-group-text">pc</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card text-center">
+                    <div class="card-body custom-card">
+                        <img src="imgs/metal.jpg" class="card-img-top" height="150px">
+                        <h4 class="card-title">Metal</h4>
+                        <p class="card-text text-muted">Rs. 28/kg</p>
+                        <button id="input3" class="btn-sm cbtn btn text-left collapsed" type="button"
+                            data-toggle="collapse" data-target="#i3" aria-expanded="false" aria-controls="i3">
+                            Check
+                        </button>
+                        <div id="i3" class="input-group mb-3 collapse" aria-labelledby="headingOne"
+                            data-parent="#input3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Qty.</span>
+                                <input id="3" type="text" class="form-control" placeholder="Enter qty">
+                                <span class="input-group-text">kg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card text-center">
+                    <div class="card-body custom-card">
+                        <img src="imgs/newspaper.jpg" class="card-img-top" height="150px">
+                        <h4 class="card-title">Paper (Newspapers)</h4>
+                        <p class="card-text text-muted">Rs. 15/kg</p>
+                        <button id="input4" class="btn-sm cbtn btn text-left collapsed" type="button"
+                            data-toggle="collapse" data-target="#i4" aria-expanded="false" aria-controls="i4">
+                            Check
+                        </button>
+                        <div id="i4" class="input-group mb-3 collapse" aria-labelledby="headingOne"
+                            data-parent="#input4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Qty.</span>
+                                <input id="4" type="text" class="form-control" placeholder="Enter qty">
+                                <span class="input-group-text">kg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card text-center">
+                    <div class="card-body custom-card">
+                        <img src="imgs/copy.jpg" class="card-img-top" height="150px">
+                        <h4 class="card-title">Paper (Copies)</h4>
+                        <p class="card-text text-muted">Rs. 18/kg</p>
+                        <button id="input5" class="btn-sm cbtn btn text-left collapsed" type="button"
+                            data-toggle="collapse" data-target="#i5" aria-expanded="false" aria-controls="i5">
+                            Check
+                        </button>
+                        <div id="i5" class="input-group mb-3 collapse" aria-labelledby="headingOne"
+                            data-parent="#input5">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Qty.</span>
+                                <input id="5" type="text" class="form-control" placeholder="Enter qty">
+                                <span class="input-group-text">kg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card text-center">
+                    <div class="card-body custom-card">
+                        <img src="imgs/oldtoys.jpg" class="card-img-top" height="150px">
+                        <h4 class="card-title">Old toys</h4>
+                        <p class="card-text text-muted">Rs. 50/pc</p>
+                        <button id="input6" class="btn-sm cbtn btn text-left collapsed" type="button"
+                            data-toggle="collapse" data-target="#i6" aria-expanded="false" aria-controls="i6">
+                            Check
+                        </button>
+                        <div id="i6" class="input-group mb-3 collapse" aria-labelledby="headingOne"
+                            data-parent="#input6">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Qty.</span>
+                                <input id="6" type="number" class="form-control" placeholder="Enter qty">
+                                <span class="input-group-text">pc</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card text-center c1">
+                    <div class="card-body custom-card">
+                        <img src="imgs/bulbs.jpg" class="card-img-top" height="150px">
+                        <h4 class="card-title">Electronics (Bulbs)</h4>
+                        <p class="card-text text-muted">Rs. 5/pc</p>
+                        <button id="input7" class="btn-sm cbtn btn text-left collapsed" type="button"
+                            data-toggle="collapse" data-target="#i7" aria-expanded="false" aria-controls="i7">
+                            Check
+                        </button>
+                        <div id="i7" class="input-group mb-3 collapse" aria-labelledby="headingOne"
+                            data-parent="#input7">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Qty.</span>
+                                <input id="7" type="number" class="form-control" placeholder="Enter qty">
+                                <span class="input-group-text">pc</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4 ">
+                <div class="card text-center">
+                    <div class="card-body custom-card">
+                        <img src="imgs/wires.jpg" class="card-img-top" height="150px">
+                        <h4 class="card-title">Electronics (Wires)</h4>
+                        <p class="card-text text-muted">Rs. 1/metre</p>
+                        <button id="input8" class="btn-sm cbtn btn text-left collapsed" type="button"
+                            data-toggle="collapse" data-target="#i8" aria-expanded="false" aria-controls="i8">
+                            Check
+                        </button>
+                        <div id="i8" class="input-group mb-3 collapse" aria-labelledby="headingOne"
+                            data-parent="#input8">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Qty.</span>
+                                <input id="8" type="number" class="form-control" placeholder="Enter qty">
+                                <span class="input-group-text">pc</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="display-total row">
+        <button id="chk-button" onclick="calculate()">Check Total</button>
+        <div class="l2">
+          <img class="image" src="imgs/rupee.svg" />
+          <input id="l1" type="text" disabled />
+        </div>
+      </div>
+      <hr>
+      <!-- 🌿 CO₂ Savings Display -->
+<div class="row text-center mt-4">
+  <div class="col-md-12">
+    <h1 style="color: green;">Your Environmental Impact</h1>
+    <p><b><h4>Estimated CO₂ saved:</h4></b></p>
+    <small class="text-muted">*Estimates based on average CO₂ absorption by a mature tree. Values are approximate and can vary.</small>
+    <br>
+    <div style="font-size: 28px; color: #28a745; font-weight: bold;" id="co2-counter">0.00 kg CO₂</div>
+  </div>
+</div>
+<!-- 📊 CO₂ Bar Chart -->
+<div class="row text-center mt-4">
+  <div class="col-md-12" style="padding: 20px; background-color: #f8f9fa; border-radius: 10px;">
+    <p><h5>Estimated CO₂ Chart:</h5></p>
+    <canvas id="co2Chart" width="600" height="300"></canvas>
+  </div>
+</div>
+
+      <script>  
+  function calculate() {
+    var input1 = parseFloat(document.getElementById("1").value) || 0;
+    var input2 = parseFloat(document.getElementById("2").value) || 0;
+    var input3 = parseFloat(document.getElementById("3").value) || 0;
+    var input4 = parseFloat(document.getElementById("4").value) || 0;
+    var input5 = parseFloat(document.getElementById("5").value) || 0;
+    var input6 = parseFloat(document.getElementById("6").value) || 0;
+    var input7 = parseFloat(document.getElementById("7").value) || 0;
+    var input8 = parseFloat(document.getElementById("8").value) || 0;
+
+    // 💰 Total price
+    var total = input1 * 8 + input2 * 3 + input3 * 28 + input4 * 15 + input5 * 18 + input6 * 50 + input7 * 5 + input8 * 1;
+    document.getElementById("l1").value = total.toFixed(2);
+
+    // 🌿 CO2 Savings (estimates)
+    var co2 = input1 * 0.5 + input2 * 0.2 + input3 * 3 + input4 * 1.8 + input5 * 2 + input6 * 1 + input7 * 0.3 + input8 * 0.4;
+    document.getElementById("co2-counter").innerText = co2.toFixed(2) + " kg CO₂";
+  }
+  
+  // Declare globally
+  let co2Chart;
+
+  function calculate() {
+    const qty = [
+      parseFloat(document.getElementById("1").value) || 0,
+      parseFloat(document.getElementById("2").value) || 0,
+      parseFloat(document.getElementById("3").value) || 0,
+      parseFloat(document.getElementById("4").value) || 0,
+      parseFloat(document.getElementById("5").value) || 0,
+      parseFloat(document.getElementById("6").value) || 0,
+      parseFloat(document.getElementById("7").value) || 0,
+      parseFloat(document.getElementById("8").value) || 0,
+    ];
+
+    const prices = [8, 3, 28, 15, 18, 50, 5, 1];
+    const co2Rates = [0.5, 0.2, 3, 1.8, 2, 1, 0.3, 0.4];
+
+    // 💰 Total Price
+    let total = qty.reduce((sum, q, i) => sum + q * prices[i], 0);
+    document.getElementById("l1").value = total.toFixed(2);
+
+    // 🌿 CO₂ Total and Chart
+    let co2Total = qty.reduce((sum, q, i) => sum + q * co2Rates[i], 0);
+    document.getElementById("co2-counter").innerText = co2Total.toFixed(2) + " kg CO₂";
+
+    const co2Data = qty.map((q, i) => q * co2Rates[i]);
+
+    // Update or create chart
+    if (co2Chart) {
+      co2Chart.data.datasets[0].data = co2Data;
+      co2Chart.update();
+    } else {
+      const ctx = document.getElementById('co2Chart').getContext('2d');
+      co2Chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: [
+            "Plastic (L)", "Plastic (S)", "Metal", "Newspaper", "Copies",
+            "Old Toys", "Bulbs", "Wires"
+          ],
+          datasets: [{
+            label: 'CO₂ Saved (kg)',
+            data: co2Data,
+            backgroundColor: '#28a745',
+            borderColor: '#1e7e34',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: "kg CO₂ Saved"
+              }
+            }
+          }
+        }
+      });
+    }
+  }
+</script>
+    </div>
+  </div>
+
+  <!-- 🔄 Footer Rebranded -->
+  <div class="card text-center bg-dark text-white">
+    <div class="card-header"></div>
+    <div class="card-body">
+      <p>Connect me on <a href="https://in.linkedin.com/in/gulam-shaikh" class="btn btn-danger">LinkedIn</a></p> <!-- 🔄 Instagram → LinkedIn -->
+    </div>
+    <div class="card-footer text-muted bg-dark">
+      <p>Made with ❤️ by <strong>Gulam Dastgir</strong> | A project for 1M1B Green Internship Initiative</p>
+      <p><a href="#">Back to top</a></p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

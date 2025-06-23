@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    xintegrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- Assuming new-age.min.css, fontawesome, and simple-line-icons are local files -->
+  <link rel="stylesheet" href="css/new-age.min.css">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+  <title>EcoSwap App</title>
+  <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+</head>
+
+<body>
+  <style>
+    body {
+      background: linear-gradient(to right, #d0f0c0, #a8e6cf) !important;
+    }
+
+    /* New styles for the centered form card */
+    .pickup-form-card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        background: #ffffff; /* White background for the card */
+        padding: 30px; /* Add padding inside the card */
+    }
+
+    .pickup-form-card h2 {
+        color: #28a745; /* Green color for the heading */
+        margin-bottom: 25px;
+    }
+
+    .pickup-form-card .form-group label {
+        font-weight: 500;
+        color: #343a40;
+        /* No text-align property needed here, as it's left-aligned by default in Bootstrap */
+    }
+
+    .pickup-form-card .form-control:focus {
+        border-color: #28a745;
+        box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+    }
+
+    .pickup-form-card .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+        transition: background-color 0.3s ease;
+    }
+
+    .pickup-form-card .btn-success:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+
+    #confirmation {
+        background-color: #d4edda; /* Light green background for success message */
+        border: 1px solid #28a745;
+        color: #155724;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        margin-top: 20px;
+    }
+  </style>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">EcoSwap</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="rate-card.html">Rate Card</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+            Learn More
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="how.html">How It Works?</a>
+            <a class="dropdown-item" href="about.html">About Us</a>
+            <a class="dropdown-item" href="FAQ.html">FAQS</a>
+          </div>
+        </li>
+        <li class="nav-item active"><a class="nav-link" href="our-app.html">Our App</a></li>
+        <!-- 🌐 Language Toggle in Navbar -->
+<li class="nav-item">
+  <select id="languageToggle" class="form-control">
+    <option value="en">English</option>
+    <option value="hi">हिन्दी</option>
+    <option value="mr">मराठी</option>
+  </select>
+</li>
+
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <!-- Main Section -->
+  <div class="container" style="margin-top: 50px;">
+    <div class="header-content mx-auto text-center">
+      <h1 class="mb-5">SEND PICKUP REQUEST!</h1>
+      <hr>
+    </div>
+<br>
+    <!-- 🚛 Scrap Pickup Booking Form - Centered and Styled -->
+    <div class="row justify-content-center mb-5"> <!-- Added mb-5 for bottom margin -->
+        <div class="col-md-8 col-lg-7"> <!-- Adjusted column width for better centering and readability -->
+            <div class="pickup-form-card" id="pickup-form">
+                <h2 class="text-center mb-4" data-i18n="title">🗓️ Schedule Scrap Pickup</h2>
+                <form id="scrapForm" onsubmit="submitScrapForm(); return false;"
+>
+                    <div class="form-group">
+                        <label for="name" data-i18n="name">Full Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" data-i18n="phone">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="e.g. 9876543210" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address" data-i18n="address">Pickup Address</label>
+                        <textarea class="form-control" id="address" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="items" data-i18n="items">Scrap Items</label>
+                        <input type="text" class="form-control" id="items" placeholder="e.g. Plastic, Paper, Electronics" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="qty" data-i18n="qty">Estimated Quantity (kg)</label>
+                        <input type="number" class="form-control" id="qty" min="0.1" step="0.1" required>
+                    </div>
+                    <div class="form-group">
+            <label for="email" data-i18n="email">Email (for confirmation)</label>
+            <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+          </div>
+                    <button type="submit" class="btn btn-success btn-block" data-i18n="submit">Submit Request</button>
+                </form>
+                <div id="confirmation" class="mt-3" style="display: none;">
+                    ✅ Request submitted successfully! Our team will contact you soon.    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Scrap Pickup Booking Form -->
+
+    <hr>
+    <header class="masthead">
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-lg-7 my-auto">
+            <div class="header-content mx-auto">
+              <h1 class="mb-5">EcoSwap makes it easy to sell your scrap from your phone. Clean your space, save the planet!</h1>
+              <a href="https://in.linkedin.com/in/gulam-shaikh"
+                class="btn btn-outline btn-xl js-scroll-trigger" target="_blank">Send Pick-Up Request Now!</a>
+            </div>
+          </div>
+          <div class="col-lg-5 my-auto">
+            <div class="device-container">
+              <div class="device-mockup iphone6_plus portrait white">
+                <div class="device">
+                  <div class="screen mob">
+                    <img src="imgs/swap.gif" class="img-fluid" alt="App Preview">
+                  </div>
+                  <div class="button"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-heading text-center">
+          <h2>EcoSwap App Features</h2>
+          <p class="text-muted">Here’s what you can do inside the app</p>
+          <hr>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 my-auto">
+            <div class="device-container">
+              <div class="device-mockup iphone6_plus portrait white">
+                <div class="device">
+                  <div class="screen mob">
+                    <img src="imgs/mob3N.png" class="img-fluid" alt="EcoSwap App">
+                  </div>
+                  <div class="button"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 my-auto">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="feature-item">
+                    <i class="icon-screen-smartphone text-primary"></i>
+                    <h3>Arrange Pickup</h3>
+                    <p class="text-muted">Pick any time slot for scrap collection.</p>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="feature-item">
+                    <i class="icon-location-pin text-primary"></i>
+                    <h3>Location Tracking</h3>
+                    <p class="text-muted">Enter your exact pickup location.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="feature-item">
+                    <i class="icon-present text-primary"></i>
+                    <h3>Free to Use</h3>
+                    <p class="text-muted">No charges for using the platform.</p>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="feature-item">
+                    <i class="icon-lock text-primary"></i>
+                    <h3>Data Privacy</h3>
+                    <p class="text-muted">Your personal data is completely secure.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+<!-- Firebase SDK for Modules -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+  import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAT3IgWdLEXkiuO3xToq5Lp890gaIa0uQI",
+    authDomain: "eco-swapper.firebaseapp.com",
+    databaseURL: "https://eco-swapper-default-rtdb.firebaseio.com",
+    projectId: "eco-swapper",
+    storageBucket: "eco-swapper.firebasestorage.app",
+    messagingSenderId: "1092887142345",
+    appId: "1:1092887142345:web:c5984a5e9718981e679218",
+    measurementId: "G-603KRLLZC3"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  window.submitScrapForm = async function () {
+    const scrapForm = document.getElementById('scrapForm');
+    const confirmation = document.getElementById('confirmation');
+
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const items = document.getElementById('items').value.trim();
+    const qty = parseFloat(document.getElementById('qty').value);
+    const email = document.getElementById('email').value.trim();
+
+    if (!name || !phone || !address || !items || isNaN(qty) || qty <= 0 || !email) {
+      confirmation.style.display = 'block';
+      confirmation.className = 'mt-3 text-danger';
+      confirmation.textContent = '❌ Please fill in all fields correctly.';
+      return;
+    }
+
+    try {
+      // Save to Firebase
+      await push(ref(db, 'pickupRequests'), {
+        name, phone, address, items, qty, email,
+        timestamp: new Date().toISOString()
+      });
+
+      // Now call EmailJS — must be called from outside module scope
+      window.sendEmail({ name, phone, address, items, qty, email });
+
+      confirmation.style.display = 'block';
+      confirmation.className = 'mt-3 text-success';
+      confirmation.textContent = '✅ Request submitted! Confirmation sent.';
+      scrapForm.reset();
+      setTimeout(() => confirmation.style.display = 'none', 5000);
+    } catch (err) {
+      console.error(err);
+      confirmation.style.display = 'block';
+      confirmation.className = 'mt-3 text-danger';
+      confirmation.textContent = '❌ Error submitting. Please try again later.';
+    }
+  };
+</script>
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script>
+  // EmailJS Init
+  emailjs.init("aTKp-koO3Z4lnl2YD"); // ✅ Your actual public key
+
+  // Function called from Firebase script
+  window.sendEmail = function({ name, phone, address, items, qty, email }) {
+    emailjs.send("service_hhupf4r", "template_svahmb9", {
+      to_name: name,
+      to_email: email,
+      phone,
+      address,
+      items,
+      qty
+    })
+    .then(() => console.log('✅ Email sent!'))
+    .catch(err => console.error('❌ Email error:', err));
+  };
+</script>
+<script>
+  const translations = {
+    en: {
+      title: "🗓️ Schedule Scrap Pickup",
+      name: "Full Name",
+      phone: "Phone Number",
+      address: "Pickup Address",
+      items: "Scrap Items",
+      qty: "Estimated Quantity (kg)",
+      email: "Email (for confirmation)",
+      submit: "Submit Request"
+    },
+    hi: {
+      title: "🗓️ कचरा पिकअप अनुरोध भेजें",
+      name: "पूरा नाम",
+      phone: "फोन नंबर",
+      address: "पिकअप पता",
+      items: "कचरे की वस्तुएं",
+      qty: "अनुमानित मात्रा (किलोग्राम)",
+      email: "ईमेल (पुष्टि के लिए)",
+      submit: "अनुरोध सबमिट करें"
+    },
+    mr: {
+      title: "🗓️ स्क्रॅप पिकअप विनंती पाठवा",
+      name: "पूर्ण नाव",
+      phone: "फोन नंबर",
+      address: "पिकअप पत्ता",
+      items: "स्क्रॅप वस्तू",
+      qty: "अंदाजे प्रमाण (किलो)",
+      email: "ईमेल (पुष्टीसाठी)",
+      submit: "विनंती सबमिट करा"
+    }
+  };
+
+  document.getElementById('languageToggle').addEventListener('change', function () {
+    const selected = this.value;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      el.textContent = translations[selected][key] || el.textContent;
+    });
+  });
+</script>
+<!-- 🌟 Testimonials Section -->
+<section class="testimonials bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">🌟 What Our Users Say</h2>
+    <div class="row">
+      <!-- Testimonial 1 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm p-4 mb-4 rounded border-0 text-center">
+          <img src="https://i.pravatar.cc/100?img=12" alt="Ravi Patel" class="rounded-circle mx-auto mb-3" width="80">
+          <p class="card-text">"EcoSwap made it super easy to sell my old electronics. The pickup was on time and smooth!"</p>
+          <h5 class="card-title text-success">– Nikhil Sharma, Mumbai</h5>
+        </div>
+      </div>
+      <!-- Testimonial 2 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm p-4 mb-4 rounded border-0 text-center">
+          <img src="https://i.pravatar.cc/100?img=47" alt="Sneha Kulkarni" class="rounded-circle mx-auto mb-3" width="80">
+          <p class="card-text">"A great platform to earn from waste while helping the planet. Highly recommend!"</p>
+          <h5 class="card-title text-success">– Zeena K., Pune</h5>
+        </div>
+      </div>
+      <!-- Testimonial 3 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm p-4 mb-4 rounded border-0 text-center">
+          <img src="https://i.pravatar.cc/100?img=8" alt="Arjun Yadav" class="rounded-circle mx-auto mb-3" width="80">
+          <p class="card-text">"Multilingual support made it easy for my parents to use this platform too. Well done!"</p>
+          <h5 class="card-title text-success">– Arrol D'Souza, Nashik</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ <!-- 🔄 Footer rebranded -->
+  <div class="card text-center bg-dark text-white">
+    <div class="card-header"></div>
+    <div class="card-body">
+      <p>Connect me on <a href="https://in.linkedin.com/in/gulam-shaikh" class="btn btn-danger">LinkedIn</a></p> <!-- 🔁 Custom LinkedIn -->
+    </div>
+    <div class="card-footer text-muted bg-dark">
+      <p>Made with ❤️ by <strong>Gulam Dastgir</strong> | A project for 1M1B Green Internship Initiative</p>
+      <p style="color: white;"><a href="#">Back to top</a></p>
+    </div>
+  </div>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

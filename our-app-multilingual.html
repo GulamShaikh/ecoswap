@@ -1,0 +1,164 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/new-age.min.css">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+  <title>EcoSwap App</title>
+</head>
+<body>
+  <style>
+    body {
+      background: linear-gradient(to right, #d0f0c0, #a8e6cf) !important;
+    }
+    .pickup-form-card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        background: #ffffff;
+        padding: 30px;
+    }
+    .pickup-form-card h2 {
+        color: #28a745;
+        margin-bottom: 25px;
+    }
+    .pickup-form-card .form-group label {
+        font-weight: 500;
+        color: #343a40;
+    }
+    .pickup-form-card .form-control:focus {
+        border-color: #28a745;
+        box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+    }
+    .pickup-form-card .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+        transition: background-color 0.3s ease;
+    }
+    .pickup-form-card .btn-success:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+    #confirmation {
+        background-color: #d4edda;
+        border: 1px solid #28a745;
+        color: #155724;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        margin-top: 20px;
+    }
+  </style>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">EcoSwap</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="rate-card.html">Rate Card</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Learn More</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="how.html">How It Works?</a>
+            <a class="dropdown-item" href="about.html">About Us</a>
+            <a class="dropdown-item" href="FAQ.html">FAQS</a>
+          </div>
+        </li>
+        <li class="nav-item active"><a class="nav-link" href="our-app.html">Our App</a></li>
+        <li class="nav-item">
+          <select id="languageToggle" class="form-control">
+            <option value="en">English</option>
+            <option value="hi">हिन्दी</option>
+            <option value="mr">मराठी</option>
+          </select>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <div class="pickup-form-card" id="pickup-form">
+      <h2 class="text-center mb-4" data-i18n="title">🗓️ Schedule Scrap Pickup</h2>
+      <form id="scrapForm">
+        <div class="form-group">
+          <label data-i18n="name">Full Name</label>
+          <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="form-group">
+          <label data-i18n="phone">Phone Number</label>
+          <input type="tel" class="form-control" id="phone" required>
+        </div>
+        <div class="form-group">
+          <label data-i18n="address">Pickup Address</label>
+          <textarea class="form-control" id="address" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+          <label data-i18n="items">Scrap Items</label>
+          <input type="text" class="form-control" id="items" required>
+        </div>
+        <div class="form-group">
+          <label data-i18n="qty">Estimated Quantity (kg)</label>
+          <input type="number" class="form-control" id="qty" min="0.1" step="0.1" required>
+        </div>
+        <div class="form-group">
+          <label data-i18n="email">Email (for confirmation)</label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+        <button type="submit" class="btn btn-success btn-block" data-i18n="submit">Submit Request</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const translations = {
+      en: {
+        title: "🗓️ Schedule Scrap Pickup",
+        name: "Full Name",
+        phone: "Phone Number",
+        address: "Pickup Address",
+        items: "Scrap Items",
+        qty: "Estimated Quantity (kg)",
+        email: "Email (for confirmation)",
+        submit: "Submit Request"
+      },
+      hi: {
+        title: "🗓️ कचरा पिकअप अनुरोध भेजें",
+        name: "पूरा नाम",
+        phone: "फोन नंबर",
+        address: "पिकअप पता",
+        items: "कचरे की वस्तुएं",
+        qty: "अनुमानित मात्रा (किलोग्राम)",
+        email: "ईमेल (पुष्टि के लिए)",
+        submit: "अनुरोध सबमिट करें"
+      },
+      mr: {
+        title: "🗓️ स्क्रॅप पिकअप विनंती पाठवा",
+        name: "पूर्ण नाव",
+        phone: "फोन नंबर",
+        address: "पिकअप पत्ता",
+        items: "स्क्रॅप वस्तू",
+        qty: "अंदाजे प्रमाण (किलो)",
+        email: "ईमेल (पुष्टीसाठी)",
+        submit: "विनंती सबमिट करा"
+      }
+    };
+
+    document.getElementById('languageToggle').addEventListener('change', function() {
+      const selected = this.value;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        el.textContent = translations[selected][key] || el.textContent;
+      });
+    });
+  </script>
+</body>
+</html>
