@@ -1,7 +1,7 @@
 
 # 🌍 **EcoSwap – India's Smart Scrap Management Platform** ♻️
 
-**🚀 Live Site:** [https://ecoswap-india.netlify.app](https://ecoswap-india.netlify.app)
+**🚀 Live Site:** [https://ecoswap-india.netlify.app]([https://ecoswap-india.netlify.app](https://ecoswap-world.netlify.app/))
 
 EcoSwap is a modern, user-friendly web platform aimed at making **recycling easier, accessible, and rewarding** for everyone. Whether you're a household or a business, EcoSwap empowers you to schedule pickups for recyclable materials — while promoting environmental responsibility and awareness.
 
@@ -34,7 +34,6 @@ EcoSwap is a modern, user-friendly web platform aimed at making **recycling easi
 
 ## 📸 **Screenshots**
 
-> _You can replace these placeholders with actual screen captures from your deployed app._
 
 | Homepage (Carousel) | Pickup Form | CO₂ Counter |
 |---------------------|-------------|-------------|
@@ -61,7 +60,6 @@ ecoswap/
 │ ├── fontawesome-free/
 │ └── simple-line-icons/
 
-
 ---
 
 ## 🔧 **Tech Stack**
@@ -86,8 +84,8 @@ ecoswap/
 ## 👤 **Author**
 
 **Gulam Dastgir Shaikh**  
-_2nd Year AI & Data Science Student_  
-**Green Intern @ 1M1B | JSW Udaan Scholar | Tech for Good Advocate**  
+_AI & Data Science Student_  
+**Green Intern @ 1M1B | Tech for Good Advocate |**  
 🔗 [LinkedIn Profile](https://in.linkedin.com/in/gulam-shaikh)
 
 ---
@@ -100,7 +98,7 @@ This project is developed as part of the **1M1B Green Internship Initiative** an
 
 ## 🖇️ Quick Links
 
-- 🔗 [Live Project on Netlify](https://ecoswap-india.netlify.app)
+- 🔗 [Live Project on Netlify](https://ecoswap-world.netlify.app/)
 - 📁 [GitHub Repository (add link once pushed)](https://github.com/gulamshaikh/EcoSwap)
 
 ---
