@@ -101,7 +101,7 @@ This project is developed as part of the **1M1B Green Internship Initiative** an
 ## 🖇️ Quick Links
 
 - 🔗 [Live Project on Netlify](https://ecoswap-india.netlify.app)
-- 📁 [GitHub Repository (add link once pushed)](https://github.com/your-username/EcoSwap)
+- 📁 [GitHub Repository (add link once pushed)](https://github.com/gulamshaikh/EcoSwap)
 
 ---
 
